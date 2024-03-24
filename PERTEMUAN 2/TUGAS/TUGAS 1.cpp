@@ -12,7 +12,7 @@ int partition(int arr[], int low, int high, int pivot){
 	int i = low;
 	int j = low;
 	while( i <= high){
-		if(arr[i] > pivot){
+		if(arr[i] < pivot){
 			i++;
 		}
 		else{
@@ -21,6 +21,16 @@ int partition(int arr[], int low, int high, int pivot){
 			j++;
 		}
 	}
+	cout <<"[";
+	for(int i = 0; i < 10; i++){
+		if (i <9){
+		cout<<arr[i]<<", ";
+		}
+		else{
+		cout<<arr[i];
+		}
+	}
+		cout<<"]"<<endl;
 	return j-1;
 }
 
@@ -31,20 +41,24 @@ void quicksort(int arr[], int low, int high){
 		
 		quicksort(arr, low, pos-1);
 		quicksort(arr, pos+1, high);
+		
 	}
 }
 
 int main(){
-	int n;
-	cout << "Tentukan panjang array : ";
-	cin >> n;
-	int arr[n];
-	for(int i = 0; i < n; i++){
-		cin >> arr[i];
+	int arr[10] = {67, 91, 87, 33, 49, 10, 16, 43, 65, 3};
+		cout<<"Data yang akan disort : [";
+	for(int i = 0; i < 10; i++){
+		if (i <9){
+		cout<<arr[i]<<", ";
+		}
+		else{
+		cout<<arr[i];
+		}
 	}
-	quicksort(arr, 0, n-1);
-	cout << "Berikut adalah array yang telah di sortir: ";
-	for( int i = 0; i < n; i++){
-	cout << arr[i]<<"\t";	
-}
+		cout<<"]"<<endl;
+	
+	cout<<"Quick Sort : "<<endl;
+	quicksort(arr, 0, 10-1);
+	
 }

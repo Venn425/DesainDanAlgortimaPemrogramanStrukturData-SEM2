@@ -4,7 +4,7 @@ using namespace std;
 void show(int arr[], int size)
 {
     for (int i = 0; i < size; i++)
-        cout << arr[i] << " ";
+        cout << arr[i+1] << " ";
 }
 
 int partition(int arr[], int low, int high)
@@ -44,10 +44,10 @@ void quickSort(int arr[], int low, int high)
 
 int main()
 {
-    int arr[5], size = 5;
+    int arr[6], size = 5;
 	
 	cout << "\nMasukkan 5 elemen : ";
-    for (int i = 0; i < 4; ++i)
+    for (int i = 0; i < 5; ++i)
     {
         cin >> arr[i];
         cout<<" ";
@@ -55,7 +55,7 @@ int main()
     cout<<endl;
     
 	cout<<"\nArray sebelum diurutkan: ";
-    for(int j = 0; j<4 ; j++){
+    for(int j = 0; j<5 ; j++){
     	cout<<arr[j];
     	cout<<" ";
 	}
